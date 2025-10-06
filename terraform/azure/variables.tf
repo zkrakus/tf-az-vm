@@ -1,3 +1,9 @@
+variable "env" {
+  description = "The environment where all resources will be deployed"
+  type        = string
+  default     = "demo"
+}
+
 variable "location" {
   description = "Azure region where all resources will be deployed"
   type        = string

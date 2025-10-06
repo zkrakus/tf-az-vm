@@ -1,9 +1,9 @@
 resource "azurerm_resource_group" "demo_rg" {
-  name     = "rg-demo"
+  name     = "rg-${var.env}"
   location = var.location
 
   tags = {
-    env     = "demo"
+    env     = var.env
     owner   = "zeus.krakus"
     purpose = "terraform-lab"
   }
