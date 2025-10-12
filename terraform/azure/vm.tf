@@ -19,10 +19,10 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 
   # Optional: use SSH key for login
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = file("~/.ssh/id_rsa.pub") # make sure you have this locally
-  }
+  #   admin_ssh_key {
+  #     username   = "azureuser"
+  #     public_key = file("~/.ssh/id_rsa.pub") # make sure you have this locally
+  #   }
 
   os_disk {
     name                 = "osdisk-${var.project}-${var.env}"
@@ -30,7 +30,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
     storage_account_type = "Standard_LRS"
   }
 
-  # Quick tagging
   tags = {
     project = var.project
     env     = var.env
