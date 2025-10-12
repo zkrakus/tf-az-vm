@@ -1,6 +1,11 @@
-1. setup az login to test cli connection to azure
+## Terra Commands
+### Spool-up 
+terraform apply -var-file="env/zeus.tfvars" -auto-approve
 
-2. create resources
+### Tear-down
+teardown terraform destroy -var-file="env/zeus.tfvars" -auto-approve
+
+## Resources
 
 azurerm_resource_group
  ├── azurerm_virtual_network
@@ -11,11 +16,3 @@ azurerm_resource_group
  └── azurerm_virtual_machine
        ├── azurerm_network_interface (attached)
        └── azurerm_os_disk / storage profile
-
-4. After Azure subscription is active:
-    - Run `az login`
-    - Optionally create a Service Principal and export:
-        ARM_CLIENT_ID
-        ARM_CLIENT_SECRET
-        ARM_TENANT_ID
-        ARM_SUBSCRIPTION_ID

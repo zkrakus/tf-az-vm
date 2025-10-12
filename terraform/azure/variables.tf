@@ -1,11 +1,15 @@
-variable "env" {
-  description = "The environment where all resources will be deployed"
+variable "project" {
+  description = "Project name (e.g., demovm, formulary, emar)"
   type        = string
-  default     = "demo"
+}
+
+variable "env" {
+  description = "Environment or developer name (e.g., demom zeus, hermes)"
+  type        = string
 }
 
 variable "location" {
-  description = "Azure region where all resources will be deployed"
+  description = "Azure region for all resources"
   type        = string
   default     = "eastus"
 }
